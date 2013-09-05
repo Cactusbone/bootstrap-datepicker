@@ -18,7 +18,13 @@
  * limitations under the License.
  * ========================================================= */
 
-(function( $ ) {
+(function() {
+    var $;
+    if (typeof module !== 'undefined' && module.exports) {
+        $ = require('jquery');
+    } else {
+        $ = window.jQuery;
+    }
 
 	var $window = $(window);
 
@@ -1364,9 +1370,14 @@
 
 	$.fn.datepicker.DPGlobal = DPGlobal;
 
+    /* DATEPICKER module export
+     * =================== */
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports= $.fn.datepicker;
+    }
 
-	/* DATEPICKER NO CONFLICT
-	* =================== */
+    /* DATEPICKER NO CONFLICT
+    * =================== */
 
 	$.fn.datepicker.noConflict = function(){
 		$.fn.datepicker = old;
@@ -1392,4 +1403,4 @@
 		$('[data-provide="datepicker-inline"]').datepicker();
 	});
 
-}( window.jQuery ));
+}());
