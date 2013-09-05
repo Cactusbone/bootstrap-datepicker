@@ -4,5 +4,5 @@
     "main": "js/boostrap-datepicker.js",
     "dependencies":{
         "jquery":"^1.7.1"
-    },
+    }
 }
