@@ -19,12 +19,7 @@
  * ========================================================= */
 
 (function() {
-    var $;
-    if (typeof module !== 'undefined' && module.exports) {
-        $ = require('jquery');
-    } else {
-        $ = window.jQuery;
-    }
+    var $ = window.jQuery;
 
 	var $window = $(window);
 
@@ -1369,12 +1364,6 @@
 						'</div>';
 
 	$.fn.datepicker.DPGlobal = DPGlobal;
-
-    /* DATEPICKER module export
-     * =================== */
-    if (typeof module !== 'undefined' && module.exports) {
-        module.exports= $.fn.datepicker;
-    }
 
     /* DATEPICKER NO CONFLICT
     * =================== */
